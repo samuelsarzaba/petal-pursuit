@@ -1,14 +1,22 @@
 # Petal Pursuit
 
-A mobile platformer game where you control a bee collecting pollen while avoiding obstacles.
+A top-down action-adventure game about love, flowers, and fighting monsters to create the perfect anniversary bouquet.
+
+## Story
+
+Navigate through dangerous territories to collect rare flowers for your partner's anniversary bouquet. Battle monsters protecting these precious blooms while racing against time to create the perfect floral arrangement.
 
 ## Features
 
-- Simple one-touch controls
-- Beautiful natural environments
-- Collectible flowers and power-ups
-- Progressive difficulty scaling
-- Score tracking system
+- Top-down combat system
+- Diverse flower collection mechanics
+- Multiple endings based on bouquet composition:
+  - True Love Ending
+  - Friend Zone Ending
+  - Breakup Ending
+- Strategic flower arrangement system
+- Monster battle mechanics
+- Time management elements
 
 ## Development Resources
 
@@ -16,9 +24,9 @@ A mobile platformer game where you control a bee collecting pollen while avoidin
 
 ## Development Status
 
-Currently in early development phase, focusing on core gameplay mechanics and asset creation.
+Currently in early development phase, focusing on combat mechanics and flower collection systems.
 
 ## Target Platform
 
-- Primary: Mobile (Android/iOS)
-- Secondary: Web browsers
+- PC (Windows/Mac/Linux)
+- Controller Support
