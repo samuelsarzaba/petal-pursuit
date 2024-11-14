@@ -18,6 +18,46 @@ Navigate through dangerous territories to collect rare flowers for your partner'
 - Monster battle mechanics
 - Time management elements
 
+## Project Structure
+
+### Unity Project (`/unity/Petal Pursuit/`)
+
+```
+Assets/
+├── Animations/        # Animation files and controllers
+├── Art/              # Imported and processed art assets
+│   ├── Characters/
+│   ├── Environment/
+│   ├── UI/
+│   └── VFX/
+├── Audio/            # Sound effects and music
+├── Materials/        # Unity materials and shaders
+├── Prefabs/         # Reusable game objects
+├── Scenes/          # Unity scenes
+└── Scripts/         # C# script files
+```
+
+### Source Assets (`/source-assets/`)
+
+```
+source-assets/
+├── art/             # Original art files (PSD, AI, etc.)
+│   ├── characters/
+│   ├── environment/
+│   ├── ui/
+│   └── concepts/
+├── audio/           # Original audio files (WAV, etc.)
+└── documents/       # Design documents, references
+```
+
+## Asset Management
+
+- **Source Assets**: Keep original art files (PSDs, AI files) in the `/source-assets` directory
+- **Unity Assets**: Only store Unity-ready assets in the Unity project's Assets folder
+- **Asset Naming Convention**:
+  - Use lowercase with hyphens for files (e.g., `player-sprite.png`)
+  - Use PascalCase for Unity assets (e.g., `PlayerController.cs`)
+
 ## Development Resources
 
 - [Calendar & Asset Tracking](https://docs.google.com/spreadsheets/d/1WIojPnEhK8Bgvg_5DPAlzi6-EJKQpwVtQp7ntNSr4zI/edit?usp=sharing)
