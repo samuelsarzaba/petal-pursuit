@@ -62,6 +62,8 @@ source-assets/
 
 - [Calendar & Asset Tracking](https://docs.google.com/spreadsheets/d/1WIojPnEhK8Bgvg_5DPAlzi6-EJKQpwVtQp7ntNSr4zI/edit?usp=sharing)
 
+- [Design Document](https://docs.google.com/presentation/d/1ke7R3j3XT5vQcjvLdXydB6Hd4IBYtRKo2mh3hSaAeBI/edit?usp=sharing)
+
 ## Development Status
 
 Currently in early development phase, focusing on combat mechanics and flower collection systems.
