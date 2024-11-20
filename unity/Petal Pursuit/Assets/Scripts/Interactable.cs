@@ -6,6 +6,7 @@ public class Interactable : Collidable
 {
     private bool interacted = false;
     public GameObject onCollectEffect;
+    public FlowerManager fm;
 
     protected override void OnCollided(GameObject collidedObject) {
       //  base.OnCollided(collidedObject); // does what collidable does
@@ -19,12 +20,17 @@ public class Interactable : Collidable
         if (!interacted) {
             interacted = true;
             Debug.Log("Interact with " + name);
-            
+
+            if (fm != null) {
+                fm.CollectFlower(gameObject);
+            }
             // Destroy the collectible
             Destroy(gameObject);
 
             // Instantiate the particle effect
-            Instantiate(onCollectEffect, transform.position, transform.rotation);
+            //Instantiate(onCollectEffect, transform.position, transform.rotation);
+
+
         }
     }
 }
