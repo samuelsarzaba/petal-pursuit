@@ -2,6 +2,12 @@
 
 A top-down action-adventure game about love, flowers, and fighting monsters to create the perfect anniversary bouquet.
 
+## Resources
+[WebGL Link](https://play.unity.com/en/games/dfa218d1-64f0-427a-8568-e57af64e0f6e/webgl-builds)
+
+[Draft Video](https://vcu.mediaspace.kaltura.com/media/draftvid/1_0x3rdmon)
+
+
 ## Story
 
 Navigate through dangerous territories to collect rare flowers for your partner's anniversary bouquet. Battle monsters protecting these precious blooms while racing against time to create the perfect floral arrangement.
