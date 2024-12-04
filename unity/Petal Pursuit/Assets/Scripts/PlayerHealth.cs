@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 100;
+    [SerializeField] private float maxHealth = 100f;
     private float currentHealth = 100f;
     public LoadSceneByIndex sceneman;
     public Image healthBar;
@@ -17,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, 100);
-        healthBar.fillAmount = currentHealth / 100f;
+        healthBar.fillAmount = currentHealth / maxHealth;
 
         // You can add hit effects or animations here
 

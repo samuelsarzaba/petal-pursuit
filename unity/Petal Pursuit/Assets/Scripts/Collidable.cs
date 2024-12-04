@@ -17,14 +17,19 @@ public class Collidable : MonoBehaviour
   }
 
   protected virtual void Update()
-  {
+{
+    collidedObjects.Clear(); // Reset list each frame to avoid duplicate detection
     myCollider.OverlapCollider(filter, collidedObjects);
+
     foreach (var o in collidedObjects)
     {
-      //  Debug.Log("Collided with " + o.name);
-      OnCollided(o.gameObject);
+        if (o != null)
+        {
+            OnCollided(o.gameObject);
+        }
     }
-  }
+}
+
 
   protected virtual void OnCollided(GameObject collidedObject)
   {

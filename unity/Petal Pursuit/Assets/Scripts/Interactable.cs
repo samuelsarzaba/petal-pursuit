@@ -8,29 +8,39 @@ public class Interactable : Collidable
     public GameObject onCollectEffect;
     public FlowerManager fm;
 
-    protected override void OnCollided(GameObject collidedObject) {
-      //  base.OnCollided(collidedObject); // does what collidable does
-
-        if (Input.GetKey(KeyCode.E)) {
+    protected override void OnCollided(GameObject collidedObject)
+{  
+    if (collidedObject.CompareTag("Player") && !interacted)
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
             OnInteract();
         }
     }
+}
 
-    protected virtual void OnInteract() {
-        if (!interacted) {
-            interacted = true;
-            Debug.Log("Interact with " + name);
+protected virtual void OnInteract()
+{
+    if (!interacted)
+    {
+        interacted = true; // Ensures only one interaction occurs
+        Debug.Log("Interact with " + name);
 
-            if (fm != null) {
-                fm.CollectFlower(gameObject);
-            }
-            // Destroy the collectible
-            Destroy(gameObject);
-
-            // Instantiate the particle effect
-            //Instantiate(onCollectEffect, transform.position, transform.rotation);
-
-
+        // Call FlowerManager logic if applicable
+        if (fm != null)
+        {
+            fm.CollectFlower(gameObject);
         }
+
+        // Instantiate particle effect
+        if (onCollectEffect != null)
+        {
+            Instantiate(onCollectEffect, transform.position, transform.rotation);
+        }
+
+        // Destroy this collectable
+        Destroy(gameObject);
     }
+}
+
 }
