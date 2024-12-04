@@ -9,10 +9,12 @@ public class WeaponSwap : MonoBehaviour
     [SerializeField] private SpriteRenderer weaponSpriteRenderer;
     [SerializeField] private Sprite shovelSprite;
     [SerializeField] private Sprite swordSprite;
+    [SerializeField] private float attackRange = 1f; // Range for weapon attacks
     
     private bool isShovelActive = false;
     private bool isSwordActive = false;
     private float weaponDamage = 20f;
+    private FlowerManager flowerManager;
 
     void Start()
     {
@@ -20,6 +22,9 @@ public class WeaponSwap : MonoBehaviour
         if (weaponSpriteRenderer == null)
             weaponSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
             
+        // Get reference to FlowerManager
+        flowerManager = FindObjectOfType<FlowerManager>();
+        
         UpdateWeaponVisuals();
     }
 
@@ -30,6 +35,81 @@ public class WeaponSwap : MonoBehaviour
         {
             ToggleWeapon();
         }
+
+        // Check for attack input and handle range-based attacks
+        if (Input.GetMouseButton(0)) // Left click to attack with weapon
+        {
+            if (isSwordActive)
+            {
+                CheckForEnemiesInRange();
+            }
+            else if (isShovelActive)
+            {
+                CheckForFlowersInRange();
+            }
+        }
+    }
+
+    private void CheckForEnemiesInRange()
+    {
+        // Get all colliders within the attack range
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, attackRange);
+        
+        // Create a list to store valid enemy targets
+        List<Enemy> validEnemies = new List<Enemy>();
+        
+        // Collect all valid enemies within range
+        foreach (Collider2D collider in hitColliders)
+        {
+            if (collider.CompareTag("Enemy"))
+            {
+                Enemy enemy = collider.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    validEnemies.Add(enemy);
+                }
+            }
+        }
+        
+        // If we found any valid enemies, randomly select and damage one
+        if (validEnemies.Count > 0)
+        {
+            int randomIndex = Random.Range(0, validEnemies.Count);
+            Enemy selectedEnemy = validEnemies[randomIndex];
+            selectedEnemy.TakeDamage((int)GetWeaponDamage());
+        }
+    }
+
+    private void CheckForFlowersInRange()
+    {
+        // Get all colliders within the attack range
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, attackRange);
+        
+        foreach (Collider2D collider in hitColliders)
+        {
+            // Check if the collider has one of the flower tags
+            if (collider.CompareTag("Rare") || collider.CompareTag("Common") || collider.CompareTag("Uncommon"))
+            {
+                // Log the collection
+                Debug.Log($"Harvesting {collider.tag} flower!");
+                
+                // Call FlowerManager to collect the flower
+                if (flowerManager != null)
+                {
+                    flowerManager.CollectFlower(collider.gameObject);
+                }
+                
+                // Destroy the flower object
+                Destroy(collider.gameObject);
+            }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // Visualize the attack range in the editor
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
     private void ToggleWeapon()
@@ -87,17 +167,5 @@ public class WeaponSwap : MonoBehaviour
     public bool IsSwordActive()
     {
         return isSwordActive;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Enemy") && Input.GetMouseButton(0) && (isShovelActive || isSwordActive)) // Left click to attack with weapon
-        {
-            Enemy enemy = other.GetComponent<Enemy>();
-            if (enemy != null)
-            {
-                enemy.TakeDamage((int)GetWeaponDamage());
-            }
-        }
     }
 }
