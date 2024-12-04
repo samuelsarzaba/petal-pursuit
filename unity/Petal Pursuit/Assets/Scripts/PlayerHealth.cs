@@ -1,18 +1,23 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
-    private int currentHealth;
+    private float currentHealth = 100f;
+    public LoadSceneByIndex sceneman;
+    public Image healthBar;
 
     private void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, 100);
+        healthBar.fillAmount = currentHealth / 100f;
 
         // You can add hit effects or animations here
 
@@ -26,6 +31,8 @@ public class PlayerHealth : MonoBehaviour
     {
         // You can add death effects or animations here
         Debug.Log("Player died!");
+        sceneman.LoadScene(7);
+
         // Instead of destroying, you might want to handle player death differently
         // like restarting the level or showing a game over screen
     }
