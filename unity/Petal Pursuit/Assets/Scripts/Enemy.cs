@@ -85,6 +85,7 @@ public class Enemy : MonoBehaviour
             {
                 playerHealth.TakeDamage(damageAmount);
                 lastAttackTime = Time.time;
+                Debug.Log("damage");
             }
         }
     }
