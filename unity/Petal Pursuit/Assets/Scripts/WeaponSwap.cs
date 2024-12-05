@@ -10,11 +10,13 @@ public class WeaponSwap : MonoBehaviour
     [SerializeField] private Sprite shovelSprite;
     [SerializeField] private Sprite swordSprite;
     [SerializeField] private float attackRange = 1f; // Range for weapon attacks
+    [SerializeField] private float attackCooldown = 0.5f; // Cooldown duration between attacks
 
     private bool isShovelActive = false;
     private bool isSwordActive = false;
     private float weaponDamage = 20f;
     private FlowerManager flowerManager;
+    private float lastAttackTime = 0f; // Track the last attack time
 
     void Start()
     {
@@ -39,13 +41,19 @@ public class WeaponSwap : MonoBehaviour
         // Check for attack input and handle range-based attacks
         if (Input.GetMouseButton(0)) // Left click to attack with weapon
         {
-            if (isSwordActive)
+            // Check if enough time has passed since last attack
+            if (Time.time >= lastAttackTime + attackCooldown)
             {
-                CheckForEnemiesInRange();
-            }
-            else if (isShovelActive)
-            {
-                CheckForFlowersInRange();
+                if (isSwordActive)
+                {
+                    CheckForEnemiesInRange();
+                    lastAttackTime = Time.time; // Update last attack time
+                }
+                else if (isShovelActive)
+                {
+                    CheckForFlowersInRange();
+                    lastAttackTime = Time.time; // Update last attack time
+                }
             }
         }
     }
