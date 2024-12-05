@@ -10,7 +10,7 @@ public class WeaponSwap : MonoBehaviour
     [SerializeField] private Sprite shovelSprite;
     [SerializeField] private Sprite swordSprite;
     [SerializeField] private float attackRange = 1f; // Range for weapon attacks
-    
+
     private bool isShovelActive = false;
     private bool isSwordActive = false;
     private float weaponDamage = 20f;
@@ -21,10 +21,10 @@ public class WeaponSwap : MonoBehaviour
         // Initialize weapon sprite
         if (weaponSpriteRenderer == null)
             weaponSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
-            
+
         // Get reference to FlowerManager
         flowerManager = FindObjectOfType<FlowerManager>();
-        
+
         UpdateWeaponVisuals();
     }
 
@@ -54,10 +54,10 @@ public class WeaponSwap : MonoBehaviour
     {
         // Get all colliders within the attack range
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, attackRange);
-        
+
         // Create a list to store valid enemy targets
         List<Enemy> validEnemies = new List<Enemy>();
-        
+
         // Collect all valid enemies within range
         foreach (Collider2D collider in hitColliders)
         {
@@ -70,7 +70,7 @@ public class WeaponSwap : MonoBehaviour
                 }
             }
         }
-        
+
         // If we found any valid enemies, randomly select and damage one
         if (validEnemies.Count > 0)
         {
@@ -84,7 +84,7 @@ public class WeaponSwap : MonoBehaviour
     {
         // Get all colliders within the attack range
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, attackRange);
-        
+
         foreach (Collider2D collider in hitColliders)
         {
             // Check if the collider has one of the flower tags
@@ -92,13 +92,13 @@ public class WeaponSwap : MonoBehaviour
             {
                 // Log the collection
                 Debug.Log($"Harvesting {collider.tag} flower!");
-                
+
                 // Call FlowerManager to collect the flower
                 if (flowerManager != null)
                 {
                     flowerManager.CollectFlower(collider.gameObject);
                 }
-                
+
                 // Destroy the flower object
                 Destroy(collider.gameObject);
             }
