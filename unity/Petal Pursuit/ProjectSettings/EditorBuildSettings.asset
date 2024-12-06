@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/1_TextMessages.unity
     guid: 907b98b7d9a2d459f87cd61333d93cd0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/2_Bouquet.unity
     guid: f00c9d2c3e3e94aeb9b95cfc6731abf7
   - enabled: 1
