@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class FlowerManager : MonoBehaviour
 {
-
     [SerializeField]
     public int flowerPoints = 0;
+
+    public BouquetDisplay bouquetDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class FlowerManager : MonoBehaviour
         }
 
         Debug.Log("points: " + flowerPoints);
+        bouquetDisplay.UpdateBouquetDisplay(flowerPoints);
     }
 
     public int GetFlowerPoints()

@@ -4195,6 +4195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1295431066}
   - component: {fileID: 1295431065}
+  - component: {fileID: 1295431067}
   m_Layer: 0
   m_Name: FlowerManager
   m_TagString: Untagged
@@ -4215,6 +4216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flowerPoints: 0
+  bouquetDisplay: {fileID: 1295431067}
 --- !u!4 &1295431066
 Transform:
   m_ObjectHideFlags: 0
@@ -4230,6 +4232,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1295431067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295431064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7399868eb7b4785419b9452d7e809f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bouquetImage: {fileID: 1002390829}
+  bouquetSprites:
+  - {fileID: 21300000, guid: 1ed98f1dcf911454e9f4030482c9d6a4, type: 3}
+  - {fileID: 21300000, guid: eda773dfe9c8cb646a96f15d6096cd91, type: 3}
+  - {fileID: 21300000, guid: 2ce652d1783a55143884f1c9c08da462, type: 3}
+  - {fileID: 21300000, guid: a98c46b8df9b8f24981e03972971ebc7, type: 3}
+  - {fileID: 21300000, guid: aed0a3c7e797bc04e89119c8be29e75e, type: 3}
+  - {fileID: 21300000, guid: 0a934ae08d870ac488be798bf159f542, type: 3}
+  - {fileID: 21300000, guid: 48f94a040b614ee46bf647ff1028f046, type: 3}
+  - {fileID: 21300000, guid: bfccba432c0ca9f469e340b25e1a87c5, type: 3}
 --- !u!1 &1349378517
 GameObject:
   m_ObjectHideFlags: 0
