@@ -521,7 +521,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 7bcc0fd71a005764c86c084e74175a35, type: 3}
   - {fileID: 21300000, guid: e8351b40914b307419ad3bd341682e21, type: 3}
   - {fileID: 21300000, guid: 3630def401c8a51418150d95d1fd11e0, type: 3}
-  secondsPerSlide: 5
+  secondsPerSlide: 3
   autoPlay: 1
   loop: 0
   nextSceneIndex: 3
