@@ -8,7 +8,7 @@ public class Interactable : Collidable
     public GameObject onCollectEffect;
     public FlowerManager fm;
 
-    protected override void OnCollided(GameObject collidedObject)
+  /*  protected override void OnCollided(GameObject collidedObject)
 {  
     if (collidedObject.CompareTag("Player") && !interacted)
     {
@@ -17,7 +17,7 @@ public class Interactable : Collidable
             OnInteract();
         }
     }
-}
+} */
 
 protected virtual void OnInteract()
 {

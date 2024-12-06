@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
     {
         // You can add death effects or animations here
         Debug.Log("Player died!");
-        sceneman.LoadScene(7);
+        sceneman.LoadScene(8);
 
         // Instead of destroying, you might want to handle player death differently
         // like restarting the level or showing a game over screen
