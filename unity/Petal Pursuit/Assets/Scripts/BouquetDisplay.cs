@@ -19,7 +19,7 @@ public class BouquetDisplay : MonoBehaviour
 
     public void UpdateBouquetDisplay(int flowerPoints)
     {
-        int index = Mathf.Clamp(flowerPoints / 6, 0, 7); // Assuming each bouquet level requires 10 points
+        int index = Mathf.Clamp(flowerPoints / 10, 0, 7); // Assuming each bouquet level requires 10 points
         bouquetImage.sprite = bouquetSprites[index];
     }
 }
