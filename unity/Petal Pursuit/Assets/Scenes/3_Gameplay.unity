@@ -2037,21 +2037,26 @@ MonoBehaviour:
   moveSpeed: 4
   idleSprite: {fileID: 21300000, guid: 3a7752a1707674d138c7c0a1bc4fc514, type: 3}
   rightSprites:
-  - {fileID: 21300000, guid: fcab3635191444464a47e68b7a7f7e17, type: 3}
-  - {fileID: 21300000, guid: 484ee88f3826e4680a12571e31f2ad8d, type: 3}
-  - {fileID: 21300000, guid: e92af26befd214facb2ac52012908412, type: 3}
-  - {fileID: 21300000, guid: 81b7660b0154b47ee9032b14f15237a4, type: 3}
-  - {fileID: 21300000, guid: 8ca2de1459d7a468ba26bc66a0a133d7, type: 3}
+  - {fileID: 21300000, guid: a799df1854eaa4e9d9c977220a6a8e67, type: 3}
+  - {fileID: 21300000, guid: 793d7bc4fd3964502ac2b06f51ea9f08, type: 3}
+  - {fileID: 21300000, guid: 437c45766f3834a87b36b0498c7cc38d, type: 3}
+  - {fileID: 21300000, guid: 6534504afc6b54485892b814ce94a073, type: 3}
+  - {fileID: 21300000, guid: 1362f529f8e9d4d20bfcb6eade28d47c, type: 3}
+  - {fileID: 21300000, guid: be73ca2798d5c4ce2ab1bb95f99c4ef8, type: 3}
   leftSprites:
-  - {fileID: 21300000, guid: 3a7752a1707674d138c7c0a1bc4fc514, type: 3}
+  - {fileID: 21300000, guid: 3d4228f3165534b43bcdd87cf060107f, type: 3}
+  - {fileID: 21300000, guid: fa893e4bba9e642f78f910d95c3a9440, type: 3}
+  - {fileID: 21300000, guid: 3906a63331d854326a932d8f912e27ee, type: 3}
+  - {fileID: 21300000, guid: 37923f99fb9a144c886fa34e684569dd, type: 3}
+  - {fileID: 21300000, guid: 6f139f563e54b456eb65b19a5646d3af, type: 3}
+  - {fileID: 21300000, guid: 2863e3102a0aa4b1eb32778b151f009e, type: 3}
   upSprites:
   - {fileID: 21300000, guid: 3a7752a1707674d138c7c0a1bc4fc514, type: 3}
   downSprites:
-  - {fileID: 21300000, guid: b7c068561835c476686fcd32bd1d13ca, type: 3}
-  - {fileID: 21300000, guid: 49b0bde434555468cb11a520b039a40a, type: 3}
-  - {fileID: 21300000, guid: fca4ce463f63549d98c77a33c6c30258, type: 3}
-  - {fileID: 21300000, guid: 43a11516ec792464c90d229f49f63a92, type: 3}
-  - {fileID: 21300000, guid: 90bee80b6154e40ce82ce661f3b02bd3, type: 3}
+  - {fileID: 21300000, guid: 0661a2d1dc4a34ce2b11868d7ffba3ac, type: 3}
+  - {fileID: 21300000, guid: de0996e67b13347f58ec0e0872054fcd, type: 3}
+  - {fileID: 21300000, guid: ed3dfcd7021dd425d9abe0de6b9f6652, type: 3}
+  - {fileID: 21300000, guid: fc0c9cd1b0d374d88ae82578f93fa91e, type: 3}
 --- !u!212 &790521140
 SpriteRenderer:
   m_ObjectHideFlags: 0
