@@ -33,7 +33,7 @@ public class WeaponSwap : MonoBehaviour
     void Update()
     {
         // Check for weapon activation input
-        if (Input.GetMouseButtonDown(1)) // Right click to toggle weapons
+        if (Input.GetKey(KeyCode.C)) // C to toggle weapons
         {
             ToggleWeapon();
         }
