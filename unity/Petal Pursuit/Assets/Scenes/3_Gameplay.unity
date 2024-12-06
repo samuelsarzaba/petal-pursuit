@@ -2051,7 +2051,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6f139f563e54b456eb65b19a5646d3af, type: 3}
   - {fileID: 21300000, guid: 2863e3102a0aa4b1eb32778b151f009e, type: 3}
   upSprites:
-  - {fileID: 21300000, guid: 3a7752a1707674d138c7c0a1bc4fc514, type: 3}
+  - {fileID: 21300000, guid: 0661a2d1dc4a34ce2b11868d7ffba3ac, type: 3}
+  - {fileID: 21300000, guid: de0996e67b13347f58ec0e0872054fcd, type: 3}
+  - {fileID: 21300000, guid: ed3dfcd7021dd425d9abe0de6b9f6652, type: 3}
+  - {fileID: 21300000, guid: fc0c9cd1b0d374d88ae82578f93fa91e, type: 3}
   downSprites:
   - {fileID: 21300000, guid: 0661a2d1dc4a34ce2b11868d7ffba3ac, type: 3}
   - {fileID: 21300000, guid: de0996e67b13347f58ec0e0872054fcd, type: 3}
@@ -6295,7 +6298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5781e8fc207a2470ba8fc2821604754b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTime: 60
+  targetTime: 90
   timerText: {fileID: 1082715598}
   messageBackground: {fileID: 1572197857}
   audioSource: {fileID: 1864526285}
