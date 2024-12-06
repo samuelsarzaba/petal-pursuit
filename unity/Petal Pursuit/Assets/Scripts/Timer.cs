@@ -14,6 +14,12 @@ public class Timer : MonoBehaviour
     
     [SerializeField]
     private Image messageBackground; // Reference to background UI image
+
+    [SerializeField]
+    private AudioSource audioSource; // Reference to audio source component
+
+    [SerializeField]
+    private AudioClip notificationSound; // Reference to notification sound
     
     // Time intervals for messages (in seconds from start)
     private float[] messageIntervals = new float[] { 60.0f, 30.0f, 15.0f, 5.0f };
@@ -44,6 +50,12 @@ public class Timer : MonoBehaviour
         if (timerText != null)
         {
             timerText.enabled = false;
+        }
+
+        // Get or add AudioSource component
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
         }
     }
 
@@ -89,8 +101,14 @@ public class Timer : MonoBehaviour
             timerText.enabled = true;
             timerText.text = message;
         }
+
+        // Play notification sound
+        if (audioSource != null && notificationSound != null)
+        {
+            audioSource.PlayOneShot(notificationSound);
+        }
         
-        yield return new WaitForSeconds(2.0f); // Show message for 2 seconds
+        yield return new WaitForSeconds(3.0f); // Show message for 3 seconds
         
         // Hide background and text
         if (!timerEnded)
