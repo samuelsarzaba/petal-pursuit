@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator animator;
+    private WeaponSwap weaponSwap;
     
     float vertical;
     float horizontal;
@@ -19,18 +20,32 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        weaponSwap = GetComponent<WeaponSwap>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        HandleMovementInput();
+        UpdateAnimator();
+    }
+
+    void HandleMovementInput()
+    {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+    }
 
-        // Update animator parameters
+    void UpdateAnimator()
+    {
+        // Update movement parameters
         animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
         animator.SetFloat("Speed", Mathf.Abs(horizontal) + Mathf.Abs(vertical));
+
+        // Update tool/sword parameters based on WeaponSwap state
+        animator.SetBool("IsHoldingTool", weaponSwap.IsShovelActive());
+        animator.SetBool("IsHoldingSword", weaponSwap.IsSwordActive());
     }
 
     void FixedUpdate()
